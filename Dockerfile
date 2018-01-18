@@ -4,7 +4,7 @@ FROM questionnaire-engine:1.0
 WORKDIR /usr/src/app
 
 # Copy the questionnaires into the container's content folder
-COPY . ./content
+COPY ./content ./content
 
 # Launch application
 CMD [ "npm", "start" ]
