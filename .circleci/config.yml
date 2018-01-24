@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:8.9.4
       - image: docker:17.05.0-ce-git
+      - image: circleci/python:3.6.2-stretch-browsers
     working_directory: ~/repo
     environment:
       - TAG: praqma/questionnaire-models
