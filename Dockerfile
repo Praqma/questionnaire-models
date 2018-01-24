@@ -1,5 +1,5 @@
 # Use the engine image for the base
-FROM questionnaire-engine:1.0
+FROM praqma/questionnaire-engine:0.1.58
 
 # Change working directory
 WORKDIR /usr/src/app
