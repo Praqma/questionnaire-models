@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/node:8.9.4
       - image: docker:17.05.0-ce-git
-      - image: circleci/python:3.6.2-stretch-browsers
     working_directory: ~/repo
     environment:
       - TAG: praqma/questionnaire-models
@@ -15,13 +14,6 @@ jobs:
       - run:
           name: Export interpolated environment variables
           command: echo 'export VERSION=0.1.$CIRCLE_BUILD_NUM' >> $BASH_ENV
-      - run:
-          name: Install Python dependencies in a venv
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-            which awscli
       - run:
           name: Login to Docker hub
           command: docker login --username $DOCKER_USER --password "$DOCKER_PASS"
