@@ -1,19 +1,16 @@
 {
-  "family": "hello-world",
-  "containerDefinitions": [
-      {
-          "name": "hello-world",
-          "image": "praqma/questionnaire-engine",
-          "cpu": 10,
-          "memory": 500,
-          "portMappings": [
-              {
-                  "containerPort": 3000,
-                  "hostPort": 80
-              }
-          ],
-          "entryPoint": [],
-          "essential": true
-      }
-  ]
+  "family": "questionnaire",
+  "containerDefinitions": [{
+    "name": "questionnaire-release",
+    "image": "praqma/questionnaire-models:0.1.14",
+    "cpu": 10,
+    "memory": 500,
+    "portMappings": [{
+      "containerPort": 3000,
+      "hostPort": 80
+    }],
+    "entryPoint": [],
+    "command": ["echi", "hello!"],
+    "essential": true
+  }]
 }
