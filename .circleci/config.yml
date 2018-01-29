@@ -45,5 +45,5 @@ jobs:
       - run:
           name: Deploy container instance on AWS
           command: |
-            fargate servoce destroy questionnaire-models_v0.1.&CIRCLE_PREVIOUS_BUILD_NUM  # destroy service if exists
-            fargate service create questionnaire-models_v0.1.$CIRCLE_BUILD_NUM --image $TAG:0.1.$CIRCLE_BUILD_NUM --env DB_PASSWORD=$DB_PASSWORD
+            fargate servoce destroy $TAG:0.1.$CIRCLE_PREVIOUS_BUILD_NUM  # destroy service if exists
+            fargate service create $TAG:$VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
