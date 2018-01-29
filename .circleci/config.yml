@@ -47,4 +47,5 @@ jobs:
           name: Deploy container instance on AWS
           command: |
             fargate service create questionnaire-models-$AWS_VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
+            sleep 3
             fargate service ps questionnaire-models-$AWS_VERSION
