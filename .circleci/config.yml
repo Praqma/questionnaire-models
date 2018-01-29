@@ -44,4 +44,4 @@ jobs:
             fi
       - run:
           name: Deploy container instance on AWS
-          command: fargate service create $TAG_$VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
+          command: fargate service create questionnaire-models-$VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
