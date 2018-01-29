@@ -48,4 +48,5 @@ jobs:
           command: |
             fargate service create questionnaire-models-$AWS_VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
             sleep 3
-            fargate service ps questionnaire-models-$AWS_VERSION
+            FARGATE_INFO = $(fargate service ps questionnaire-models-$AWS_VERSION)
+            echo $FARGATE_INFO
