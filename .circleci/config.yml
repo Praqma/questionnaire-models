@@ -46,4 +46,4 @@ jobs:
           name: Deploy container instance on AWS
           command: |
             # fargate service destroy $TAG:0.1.$CIRCLE_PREVIOUS_BUILD_NUM  # destroy service if exists
-            fargate service create $TAG:$VERSION --image $TAG:$VERSION --env DB_PASSWORD=$DB_PASSWORD
+            fargate service create $TAG:$VERSION --image $TAG_$VERSION --env DB_PASSWORD=$DB_PASSWORD
