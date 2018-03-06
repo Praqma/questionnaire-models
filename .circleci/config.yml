@@ -25,7 +25,7 @@ jobs:
           command: |
             echo 'export VERSION=0.1.$CIRCLE_BUILD_NUM' >> $BASH_ENV
             echo 'export VERSION_TAG=v0-1-$CIRCLE_BUILD_NUM' >> $BASH_ENV
-            echo 'export IMAGE_NAME=$TAG:$VERSION' >> $BASH_ENV
+            echo 'export IMAGE_TAG=$TAG:$VERSION' >> $BASH_ENV
             echo 'export AWS_SERVICE_NAME_PROD=questionnaire-models-$VERSION_TAG' >> $BASH_ENV
       - run:
           name: Login to Docker hub
@@ -46,4 +46,4 @@ jobs:
       - run:
           name: Deploy container instance on AWS
           command: |
-            source ./scripts/create_service.sh $AWS_SERVICE_NAME_PROD IMAGE_NAME prod $DB_URI && echo 'export IP=$IP' >> $BASH_ENV
+            source ./scripts/create_service.sh $AWS_SERVICE_NAME_PROD IMAGE_TAG prod $DB_URI && echo 'export IP=$IP' >> $BASH_ENV
