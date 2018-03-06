@@ -46,4 +46,4 @@ jobs:
       - run:
           name: Deploy container instance on AWS
           command: |
-            ./scripts/create_service.sh $AWS_SERVICE_NAME_PROD IMAGE_NAME prod $DB_URI && echo 'export IP=$IP' >> $BASH_ENV
+            source ./scripts/create_service.sh $AWS_SERVICE_NAME_PROD IMAGE_NAME prod $DB_URI && echo 'export IP=$IP' >> $BASH_ENV
