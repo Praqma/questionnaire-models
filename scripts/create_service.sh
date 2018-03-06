@@ -46,6 +46,7 @@ wait_for_ip() {
     if [ $SECONDS -gt "300" ]
     then
       echo "[!] Timed out - server could not be started."
+      exit 1
       break
     fi
   done
