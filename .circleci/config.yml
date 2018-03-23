@@ -47,3 +47,7 @@ jobs:
           name: Deploy container instance on AWS
           command: |
             source $BASH_ENV && source ./scripts/create_service.sh $AWS_SERVICE_NAME_PROD $IMAGE_TAG prod $DB_URI && echo 'export IP=$IP' >> $BASH_ENV
+      - run:
+          name: Prune unused services on AWS
+          command: |
+            source ~/repo/scripts/prune_services.sh
