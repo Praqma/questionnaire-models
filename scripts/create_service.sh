@@ -7,11 +7,10 @@
 SERVICE_NAME=$1
 IMAGE_TAG=$2
 ENV=$3
-DB_URI=$4
 
 create_service() {
   echo "Creating service. This will take a while..."
-  fargate service create $SERVICE_NAME --image $IMAGE_TAG --env DB_URI=$DB_URI --env PORT=80
+  fargate service create $SERVICE_NAME --image $IMAGE_TAG --env DB_PASSWORD_PROD=$DB_PASSWORD_PROD --env PORT=80
 }
 
 check_service_status() {
