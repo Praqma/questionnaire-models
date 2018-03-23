@@ -10,7 +10,7 @@ ENV=$3
 DB_URI=$4
 
 create_service() {
-  echo "Creating service..."
+  echo "Creating service. This will take a while..."
   fargate service create $SERVICE_NAME --image $IMAGE_TAG --env DB_URI=$DB_URI --env PORT=80
 }
 
